@@ -1,3 +1,9 @@
+import pandas as pd
+url = 'https://github.com/swenrengers/MitarbeiterverwaltungGruppe5/blob/main/export.csv'
+df = pd.read_csv(url, sep=';', index_line=1)
+print(df.head(6))
+
+
 selection = 0       # A variable is added for inputs from the user, to go through while loops.
 while selection != 6:       # As long as the variable is not 6, the while loop will be running.
         print("Welcome to the Employee Management Program (EMP)\n"      # The menu will be printed.

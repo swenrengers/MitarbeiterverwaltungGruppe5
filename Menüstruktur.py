@@ -54,6 +54,13 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                     datasetnr = int(input("Which dataset do you want to show?  "))
                     print(df.iloc[datasetnr])
 
+                if selection == 3:
+                    df.columns.tolist(hans)
+                    print(hans)
+                    datafilter = input("Type fliter:  ")
+                    newdf = df[(df[datafilter].str.contains('Werner'))]
+                    print(newdf)
+
                 if selection != 5:      # If any number except the number 5 is inserted, then the text below will be printed and the submenu will be displayed again.
                     print("\n This function is not developed yet.\n")
 

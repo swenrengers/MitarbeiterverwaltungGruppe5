@@ -93,3 +93,4 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
         else:       # If any number above 4 is entered, then the text below is printed out and the while loop starts again.
             print("\nThis number is not valid. Please try again.\n")
 
+testest

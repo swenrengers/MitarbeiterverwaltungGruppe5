@@ -94,3 +94,4 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
             print("\nThis number is not valid. Please try again.\n")
 
 testest
+doppeltest

@@ -1,4 +1,5 @@
 import pandas as pd
+from pandasgui import show
 
 pd.set_option('display.max_columns', 20)
 pd.set_option('display.max_rows', 20)
@@ -48,19 +49,17 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                 selection = int(input("Please enter a number between 1 and 5!  "))      # The user now can give a new value to the variable.
 
                 if selection == 1:
-
                     print(df)
+                    show(df)
+
 
                 if selection == 2:
                     datasetnr = int(input("Which dataset do you want to show?  "))
                     print(df.iloc[datasetnr])
 
                 if selection == 3:
-                    df.columns.tolist(hans)
-                    print(hans)
-                    datafilter = input("Type fliter:  ")
-                    newdf = df[(df[datafilter].str.contains('Werner'))]
-                    print(newdf)
+                    df.filter(like='Werner', axis=1)
+                    df.filter
 
                 if selection != 5:      # If any number except the number 5 is inserted, then the text below will be printed and the submenu will be displayed again.
                     print("\n This function is not developed yet.\n")

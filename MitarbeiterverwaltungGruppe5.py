@@ -54,9 +54,41 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                     datasetnr = int(input("Which dataset do you want to show?  "))
                     print(df.iloc[datasetnr])
 
-                if selection == 3:
-                    df.filter(like='Werner', axis=1)
-                    df.filter
+                if selection == 3:  # If the value of the variable is a 2, then this while loop will start.
+                    while selection != 5:  # The while loop is running, as long as not the number 5 is inserted.
+                        print("\n""1. Alter\n"
+                              "2. Name\n"
+                              "3. Abteilung\n"
+                              "4. Krankenkasse\n"
+                              "5. back\n")
+
+                        selection = int(input(
+                            "Please enter a number between 1 and 5!  "))  # The user now can give a new value to the variable.
+
+                        if selection == 1:
+                            a = int(input("Alter?:\n"))
+                            newdfa = df.query('Alter == @a')
+                            print(newdfa)
+
+                        if selection == 2:
+                            n = input("Name?:\n")
+                            newdfn = df.query('Name.str.contains(@n)')
+                            print(newdfn)
+
+                        if selection == 3:
+                            a = input("Abteilung?:\n")
+                            newdfa = df.query('Abteilung.str.contains(@a)')
+                            print(newdfa)
+
+                        if selection == 4:
+                            a = input("Krankenkasse?:\n")
+                            newdfa = df.query('Krankenkasse.str.contains(@a)')
+                            print(newdfa)
+
+
+                        if selection > 5:  # If any number above 5 is entered, then the text below is printed out.
+                            print("\nThis number is not valid. Please try again.\n")
+
 
                 if selection > 5:       # If any number above 5 is entered, then the text below is printed out.
                     print("\nThis number is not valid. Please try again.\n")

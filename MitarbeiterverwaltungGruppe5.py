@@ -49,8 +49,6 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
 
                 if selection == 1:
                     print(df)
-                    show(df)
-
 
                 if selection == 2:
                     datasetnr = int(input("Which dataset do you want to show?  "))
@@ -59,9 +57,6 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                 if selection == 3:
                     df.filter(like='Werner', axis=1)
                     df.filter
-
-                if selection != 5:      # If any number except the number 5 is inserted, then the text below will be printed and the submenu will be displayed again.
-                    print("\n This function is not developed yet.\n")
 
                 if selection > 5:       # If any number above 5 is entered, then the text below is printed out.
                     print("\nThis number is not valid. Please try again.\n")

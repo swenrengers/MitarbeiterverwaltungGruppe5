@@ -1,10 +1,10 @@
-import pandas as pd
+import pandas as pd #Modul für die Datenbankverwaltung
 
-pd.set_option('display.max_columns', 20)
+pd.set_option('display.max_columns', 20) #zur Übersichtlichkeit
 pd.set_option('display.max_rows', 20)
-pd.options.display.width = 0
-url = 'https://raw.githubusercontent.com/swenrengers/MitarbeiterverwaltungGruppe5/main/export.csv'
-df = pd.read_csv(url, sep=';', index_col=0)
+pd.options.display.width = 0 #Anzeigeeinstellung
+url = 'https://raw.githubusercontent.com/swenrengers/MitarbeiterverwaltungGruppe5/main/export.csv' #Einlesen der CSV
+df = pd.read_csv(url, sep=';', index_col=0) #Festlegen des Semikolons als Trenner in der CSV
 
 selection = 0       # A variable is added for inputs from the user, to go through while loops.
 while selection != 6:       # As long as the variable is not 6, the while loop will be running.
@@ -48,15 +48,15 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                 selection = int(input("Please enter a number between 1 and 5!  "))      # The user now can give a new value to the variable.
 
                 if selection == 1:
-                    print(df)
+                    print(df) #Ausgabe der kompletten Datenbank als Liste zur Ansicht
 
                 if selection == 2:
                     datasetnr = int(input("Which dataset do you want to show?  "))
-                    print(df.iloc[datasetnr])
+                    print(df.iloc[datasetnr]) #Anzeige eines bestimmten Datensatzes anhand der ID
 
                 if selection == 3:  # If the value of the variable is a 2, then this while loop will start.
                     while selection != 5:  # The while loop is running, as long as not the number 5 is inserted.
-                        print("\n""1. Alter\n"
+                        print("\n""1. Alter\n" #Auswahl der Rubrik, nach der gefiltert werden soll
                               "2. Name\n"
                               "3. Abteilung\n"
                               "4. Krankenkasse\n"
@@ -67,22 +67,22 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
 
                         if selection == 1:
                             a = int(input("Alter?:\n"))
-                            newdfa = df.query('Alter == @a')
+                            newdfa = df.query('Alter == @a') #Filter nach Alter über die Übergabevariable @a
                             print(newdfa)
 
                         if selection == 2:
                             n = input("Name?:\n")
-                            newdfn = df.query('Name.str.contains(@n)')
+                            newdfn = df.query('Name.str.contains(@n)') #Filter nach Name über die Übergabevariable @n
                             print(newdfn)
 
                         if selection == 3:
                             a = input("Abteilung?:\n")
-                            newdfa = df.query('Abteilung.str.contains(@a)')
+                            newdfa = df.query('Abteilung.str.contains(@a)') #Filter nach Abteilung über die Übergabevariable @n
                             print(newdfa)
 
                         if selection == 4:
                             a = input("Krankenkasse?:\n")
-                            newdfa = df.query('Krankenkasse.str.contains(@a)')
+                            newdfa = df.query('Krankenkasse.str.contains(@a)') #Filter nach Krankenkasse über die Übergabevariable @n
                             print(newdfa)
 
 

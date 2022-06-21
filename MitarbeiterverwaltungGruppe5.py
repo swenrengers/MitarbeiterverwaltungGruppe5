@@ -1,8 +1,8 @@
 import pandas as pd #Modul für die Datenbankverwaltung
 
 pd.set_option('display.max_columns', 20) #zur Übersichtlichkeit
-pd.set_option('display.max_rows', 20)
-pd.options.display.width = 0 #Anzeigeeinstellung
+pd.set_option('display.max_rows', 20) #s.o.
+pd.options.display.width = 0 #Anzeigeeinstellung -> autodetection
 url = 'https://raw.githubusercontent.com/swenrengers/MitarbeiterverwaltungGruppe5/main/export.csv' #Einlesen der CSV
 df = pd.read_csv(url, sep=';', index_col=0) #Festlegen des Semikolons als Trenner in der CSV
 
@@ -39,7 +39,7 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                     print("\nThis number is not valid. Please try again.\n")
 
         elif(selection == 2):       # If the value of the variable is a 2, then this while loop will start.
-            while selection != 5:       # The while loop is running, as long as not the number 5 is inserted.
+            while selection != 7:       # The while loop is running, as long as not the number 5 is inserted.
                 print("\n""1. show all datasets\n"
                       "2. show single dataset\n"
                       "3. filter ...\n"
@@ -104,7 +104,7 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                 if selection == 6:
                     print(df.Name.to_string(index=False)) #Ausgabe der Spalte "Name"
 
-                if selection > 7:       # If any number above 5 is entered, then the text below is printed out.
+                if selection > 7:       # If any number above 7 is entered, then the text below is printed out.
                     print("\nThis number is not valid. Please try again.\n")
 
         elif(selection == 3):       # If the value of the variable is a 3, then this while loop will start.

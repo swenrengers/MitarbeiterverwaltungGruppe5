@@ -43,7 +43,7 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                 print("\n""1. show all datasets\n"
                       "2. show single dataset\n"
                       "3. filter ...\n"
-                      "4. show empty fields\n"
+                      "4. sort datasets\n"
                       "5. back\n")
 
                 selection = int(input("Please enter a number between 1 and 5!  "))      # The user now can give a new value to the variable.

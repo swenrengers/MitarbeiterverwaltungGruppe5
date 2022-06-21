@@ -94,14 +94,15 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
 
                 if selection == 4:
                     a = input("Nach was soll sortiert werden?: \n")
-                    df.sort_values(by=[a], inplace=True)
+                    df.sort_values(by=[a], inplace=True) #Sorterung nach der Eingabe von "a"
                     print(df)
 
                 if selection == 5:
-                    df2 = (round(df["Alter"].mean(),0))
+                    df2 = (round(df["Alter"].mean(),0)) #Ausgabe des Mittelwerts der Spalte Alter, mit Rundung auf eine Stelle
                     print(" The avarage age of the employees is: \n", df2)
+
                 if selection == 6:
-                    print(df.Name.to_string(index=False))
+                    print(df.Name.to_string(index=False)) #Ausgabe der Spalte "Name"
 
                 if selection > 7:       # If any number above 5 is entered, then the text below is printed out.
                     print("\nThis number is not valid. Please try again.\n")

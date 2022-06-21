@@ -44,7 +44,9 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                       "2. show single dataset\n"
                       "3. filter ...\n"
                       "4. sort datasets\n"
-                      "5. back\n")
+                      "5. calculate avarage age\n"
+                      "6. show specific columns\n"
+                      "7. back\n")
 
                 selection = int(input("Please enter a number between 1 and 5!  "))      # The user now can give a new value to the variable.
 
@@ -95,7 +97,13 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                     df.sort_values(by=[a], inplace=True)
                     print(df)
 
-                if selection > 5:       # If any number above 5 is entered, then the text below is printed out.
+                if selection == 5:
+                    df2 = (round(df["Alter"].mean(),0))
+                    print(" The avarage age of the employees is: \n", df2)
+                if selection == 6:
+                    print(df.Name.to_string(index=False))
+
+                if selection > 7:       # If any number above 5 is entered, then the text below is printed out.
                     print("\nThis number is not valid. Please try again.\n")
 
         elif(selection == 3):       # If the value of the variable is a 3, then this while loop will start.

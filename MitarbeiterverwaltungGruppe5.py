@@ -39,7 +39,7 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                     print("\nThis number is not valid. Please try again.\n")
 
         elif(selection == 2):       # If the value of the variable is a 2, then this while loop will start.
-            while selection != 7:       # The while loop is running, as long as not the number 5 is inserted.
+            while selection != 7:       # The while loop is running, as long as not the number 7 is inserted.
                 print("\n""1. show all datasets\n"
                       "2. show single dataset\n"
                       "3. filter ...\n"

@@ -89,6 +89,10 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                         if selection > 5:  # If any number above 5 is entered, then the text below is printed out.
                             print("\nThis number is not valid. Please try again.\n")
 
+                if selection == 4:
+                    a = input("Nach was soll sortiert werden?: \n")
+                    df.sort_values(by=[a], inplace=True)
+                    print(df)
 
                 if selection > 5:       # If any number above 5 is entered, then the text below is printed out.
                     print("\nThis number is not valid. Please try again.\n")

@@ -28,7 +28,6 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                       "2. add new single dataset (via console)\n"
                       "3. add new column (for all datasets)\n"
                       "4. back\n")
-                #test
 
                 selection = int(input("Please enter a number between 1 and 4!  "))      # The user now can give a new value to the variable.
 

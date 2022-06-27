@@ -1,5 +1,6 @@
 import pandas as pd #Modul für die Datenbankverwaltung
 import datetime
+import os
 
 pd.set_option('display.max_columns', 20) #zur Übersichtlichkeit
 pd.set_option('display.max_rows', 20)
@@ -86,11 +87,11 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                     print("Data appended successfully.")
 
                 if selection == 2:
-                    newcoloumn = input("Neue Rubrik: ")
-                    df.insert(0, newcoloumn, '')
-                    df.to_csv(url, mode='a', index=False, header=False)
+                    newcolumn = input("Neue Rubrik: ")
+                    df.insert(0, newcolumn, '')
+                    df.to_csv(df)
 
-                    print("Coloumn appended successfully.")
+                    print("Column appended successfully.")
 
                 if selection > 3:       # If any number above 4 is entered, then the text below is printed out.
                     print("\nThis number is not valid. Please try again.\n")
@@ -158,11 +159,24 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
         elif(selection == 3):       # If the value of the variable is a 3, then this while loop will start.
             selection = 1       # The variable is set to 1, because if this would not happen the submenu would close because the input to close the while loop is 3 too.
             while selection != 3:       # The while loop is running, as long as not the number 3 is inserted.
-                print("\n""1. update all\n"
-                      "2. update single dataset\n"
+                print("\n""1. update cell value\n"
+                      "2. update column\n"
                       "3. back\n")
 
                 selection = int(input("Please enter a number between 1 and 3!  "))      # The user now can give a new value to the variable.
+
+                if selection == 1:
+                    row_label = input("Bitte Zeile angeben: ")
+                    column_name = input("Bitte Rubrik angeben: ")
+                    new_value = input("Bitte neuen Wert angeben")
+                    df.loc[row_label, column_name] = new_value
+                    print("\n Cell value changed successfully..\n")
+
+                if selection == 2:
+                    old_column = input("Bitte alten Rubrik Namen angeben: ")
+                    new_column = input("Bitte neuen Rubrik Namen angeben: ")
+                    df.rename(columns={old_column: new_column}, inplace=True)
+                    print("\n Column name changed successfully..\n")
 
                 if selection != 3:      # If any number except the number 5 is inserted, then the text below will be printed and the submenu will be displayed again.
                     print("\n This function is not developed yet.\n")
@@ -180,8 +194,23 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
 
                 selection = int(input("Please enter a number between 1 and 4!  "))
 
-                if selection != 4:      # If any number except the number 5 is inserted, then the text below will be printed and the submenu will be displayed again.
-                    print("\n This function is not developed yet.\n")
+                if selection == 1:
+                    file = url
+                    if(os.path.exists(file) and os.path.isfile(file)):
+                        os.remove(file)
+                        print("file deleted")
+                    else:
+                        print("file not found")
+
+                if selection == 2:
+                    deleterow = input("Bitte ID der Zeile eingeben: ")
+                    df.drop(deleterow, axis=0)
+                    print("Row deleted")
+
+                if selection == 3:
+                    columnname = input("Welche Rubrik soll gelöscht werden? ")
+                    df.drop(columnname, axis=1)
+                    print("Column deleted")
 
                 if selection > 4:       # If any number above 4 is entered, then the text below is printed out.
                     print("\nThis number is not valid. Please try again.\n")

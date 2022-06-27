@@ -168,18 +168,15 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                 if selection == 1:
                     row_label = input("Bitte Zeile angeben: ")
                     column_name = input("Bitte Rubrik angeben: ")
-                    new_value = input("Bitte neuen Wert angeben")
+                    new_value = input("Bitte neuen Wert angeben ")
                     df.loc[row_label, column_name] = new_value
-                    print("\n Cell value changed successfully..\n")
+                    print("\n Cell value changed successfully.\n")
 
                 if selection == 2:
                     old_column = input("Bitte alten Rubrik Namen angeben: ")
                     new_column = input("Bitte neuen Rubrik Namen angeben: ")
                     df.rename(columns={old_column: new_column}, inplace=True)
-                    print("\n Column name changed successfully..\n")
-
-                if selection != 3:      # If any number except the number 5 is inserted, then the text below will be printed and the submenu will be displayed again.
-                    print("\n This function is not developed yet.\n")
+                    print("\n Column name changed successfully.\n")
 
                 if selection > 3:       # If any number above 3 is entered, then the text below is printed out.
                     print("\nThis number is not valid. Please try again.\n")

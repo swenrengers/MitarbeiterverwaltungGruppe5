@@ -18,7 +18,7 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                   "2. read\n"
                   "3. update\n"
                   "4. delete\n"
-                  "5. save/export\n"
+                  "5. export\n"
                   "6. end program\n")
 
         selection = int(input("Please enter a number between 1 and 6!\n"        # The variable will get a new value from the user.
@@ -37,10 +37,10 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                     nr = int(input("ID: ")),
                     name = input("Name: "),
                     personalnummer = int(input("Personalnummern: ")),
-                    day = int(input("Geburtstag: "))
-                    month = int(input("Geburtsmonat "))
                     year = int(input("Geburtsjahr: "))
-                    geburtsdatum = datetime.date(day, month, year)
+                    month = int(input("Geburtsmonat "))
+                    day = int(input("Geburtstag: "))
+                    geburtsdatum = datetime.date(year, month, day)
                     alter = int(input("Alter: ")),
                     adresse = input("Adresse: "),
                     abteilung = input("Abteilung: "),
@@ -54,10 +54,10 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                     gehalt = int(input("Gehalt: ")),
                     email = input("E-Mail: "),
                     vorgesetzter = input("Vorgesetzter: "),
-                    day = int(input("Eintrittstag: "))
-                    month = int(input("Eintrittsmonat "))
                     year = int(input("Eintrittsjahr: "))
-                    eintrittsdatum = datetime.date(day, month, year),
+                    month = int(input("Eintrittsmonat "))
+                    day = int(input("Eintrittstag: "))
+                    eintrittsdatum = datetime.date(year, month, day),
 
                     newdataframe = {
                         'ID': [nr],
@@ -213,7 +213,9 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
                     print("\nThis number is not valid. Please try again.\n")
 
         elif(selection == 5):       # If the value of the variable is a 5, then the text below will be displayed.
-            print("Saved.")
+            exportname = input("Bitte Name der Datei angeben (Endung mit .csv): ")
+            df.to_csv(exportname)
+            print("Exported.")
 
         elif(selection == 6):       # If the value of the variable is a 6, then the text below will be displayed.
             print("Good Bye!\n"

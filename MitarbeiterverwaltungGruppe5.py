@@ -82,7 +82,7 @@ while selection != 6:       # As long as the variable is not 6, the while loop w
 
                     df = pd.DataFrame(newdataframe)
 
-                    df.to_csv(url, mode='a', index=False, header=False)
+                    df.to_csv('export.csv')
 
                     print("Data appended successfully.")
 
